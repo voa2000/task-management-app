@@ -1,0 +1,12 @@
+name: task-management-app
+on: [push]
+jobs:
+  task-management-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          yarn-version: '1.22.15'
+      - run: yarn install
+      - run: yarn test
